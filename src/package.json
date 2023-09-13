@@ -1,0 +1,14 @@
+{
+  "name": "projeto-final_imjs_on25",
+  "version": "1.0.0",
+  "description": "",
+  "main": "transacao.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Celina Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

@@ -20,11 +20,8 @@ class Usuario {
     }
   
     setIdade(novaIdade) {
-      if (novaIdade >= 18) {
-        this.idade = novaIdade;
-      } else {
-        console.log("Para abrir uma conta você precisa ser maior de idade.");
-      }
+      this.idade =novaIdade;
+
     }
 
     get cpf() {
@@ -39,7 +36,11 @@ class Usuario {
     }
   }
 
-  const usuario1 = new Usuario("João", "joao@email.com", 25);
+  const usuario1 = new Usuario("João", "joao@email.com", 25, '12345678900');
 
   console.log("Informações iniciais do usuário:");
 usuario1.mostrarInformacoes();
+
+
+module.exports = { Usuario,usuario1 };
+
