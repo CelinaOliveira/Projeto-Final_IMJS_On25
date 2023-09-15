@@ -35,7 +35,3 @@ module.exports = {Transacao}
 
 const transacao1 = new Transacao("Salário", 3000);
 const transacao2 = new Transacao("Conta de agua", -100);
-transacao1.adicionarTransacao(transacao1)
-transacao2.adicionarTransacao(transacao2)
-
-//carteira1.mostrarTransacoes();

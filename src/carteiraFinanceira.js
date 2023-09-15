@@ -1,7 +1,8 @@
 const { usuario1 } = require('./usuario');
 
 class CarteiraFinanceira {
-    constructor(usuario, valorInicial, investimentoMensal, taxaDeJurosAnual, periodoEmAnos) {
+    constructor( usuario, valorInicial, investimentoMensal, 
+         taxaDeJurosAnual, periodoEmAnos) {
       this.usuario = usuario;
       this.valorInicial = valorInicial;
       this.investimentoMensal = investimentoMensal;
@@ -47,9 +48,9 @@ class CarteiraFinanceira {
 
 const valorInicial = 1000; 
 const investimentoMensal = 200; 
-const taxaDeJurosAnual = 6; 
+const taxaDeJurosAnual = 0.006; 
 const periodoEmAnos = 5; 
-const calculadora2 = new CarteiraFinanceira(valorInicial, investimentoMensal, taxaDeJurosAnual, periodoEmAnos)
+const calculadora2 = new CarteiraFinanceira(usuario1, valorInicial, investimentoMensal, taxaDeJurosAnual, periodoEmAnos)
 const montanteFinal = calculadora2.calcularJurosCompostos();
 console.log(`Montante final após ${periodoEmAnos} anos: R$ ${montanteFinal.toFixed(2)} de juros compostos`);
 calculadora2.calcularTotalInvestido();
