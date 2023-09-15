@@ -42,5 +42,5 @@ class Usuario {
 usuario1.mostrarInformacoes();
 
 
-module.exports = { Usuario,usuario1 };
+module.exports = { Usuario };
 
