@@ -1,34 +1,41 @@
-const { CarteiraFinanceira } = require('./carteiraFinanceira');
-const { usuario } = require('./usuario');
+  class Transacao {
+    static transacoes = []
 
-class Transacao extends CarteiraFinanceira {
-    constructor(descricao, valor) {
-      this.descricao = descricao;
-      this.valor = valor;
-      this.data = new Date();
+      constructor(descricao, valor) {
+        this.descricao = descricao;
+        this.valor = valor;
+        this.data = new Date();
+        this.constructor.transacoes.push({
+        
+          descricao: this.descricao,
+          valor: this.valor
+
+        });
+      }
+
+   //   adicionarTransacao(transacao) {
+     //     this.transacoes.push(transacao);
+    //  }
+
+      mostrarTransacoes() {
+          console.log("Lista de Transações:");
+          for (let i = 0; i < this.transacoes.length; i++) {
+            const transacao = this.transacoes[i];
+            console.log(`Transação ${i + 1}:`);
+            console.log(`Descrição: ${transacao.descricao}`);
+            console.log(`Valor: ${transacao.valor} reais`);
+            console.log(`Data: ${transacao.data.toISOString()}`);
     }
-
-
-    adicionarTransacao(transacao) {
-        this.transacoes.push(transacao);
-    }
-
-    
-    mostrarTransacoes() {
-        console.log("Lista de Transações:");
-        this.transacoes.forEach((transacao, index) => {
-          console.log(`Transação ${index + 1}:`);
-          console.log(`Descrição: ${transacao.descricao}`);
-          console.log(`Valor: ${transacao.valor} reais`);
-          console.log(`Data: ${transacao.data.toISOString()}`);
-    });
   }
-}
+  }
+
+module.exports = {Transacao}
 
 
 
-//minhaCarteira.setSaldo(1000);
-//console.log(`Saldo atual: ${minhaCarteira.getSaldo()} reais`);
+const transacao1 = new Transacao("Salário", 3000);
+const transacao2 = new Transacao("Conta de agua", -100);
+transacao1.adicionarTransacao(transacao1)
+transacao2.adicionarTransacao(transacao2)
 
-//const transacao1 = new Transacao("Salário", 2000);
-//minhaCarteira.adicionarTransacao(transacao1);
+//carteira1.mostrarTransacoes();
